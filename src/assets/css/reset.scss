@@ -1,0 +1,69 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+  
+#app {
+    height: 100%;
+    width: 100%;
+}
+
+body, input, select, textarea, button, .ui-btn, pre{
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    font-family: 'noto-fonts';
+    font-weight: 100;
+    vertical-align: baseline;
+}
+h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, span, a, strong, em, i, address{
+    margin: 0; 
+    padding: 0;
+    font-weight: 100;
+    font-style: normal;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+li, ol li:before{
+    list-style: none; 
+    content:none !important
+}
+textarea{
+    margin: 0; 
+    overflow-y: auto !important; 
+    font-size: 16px; 
+    resize: none !important;
+}
+a{
+    text-decoration: none; 
+    color: #000;
+}
+*:focus{
+    outline:0 !important
+}
+
+button {
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="number"]::placeholder {
+    color: #AAAAAA;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+   
+}
