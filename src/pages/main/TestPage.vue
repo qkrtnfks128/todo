@@ -1,8 +1,13 @@
 <template>
     <Bar
-        :dotColor="dotColor"
         :minValue="minValue"
-        :maxValue="maxValue">
+        :maxValue="maxValue"
+        :label1="label1"
+        :label2="label2"
+        :labelValue1="labelValue1"
+        :labelValue2="labelValue2"
+        :labelValuePlus="labelValuePlus"
+        >
     </Bar>
 </template>
 
@@ -15,9 +20,13 @@ export default {
     },
     data(){
         return{
-            dotColor:'red',
-            minValue:83,
-            maxValue:105
+            maxValue:155,
+            minValue:88,
+            label1:'최고',
+            label2:'최저',
+            labelValue1:130,
+            labelValue2:90,
+            labelValuePlus:10,
         }
     }
 }
