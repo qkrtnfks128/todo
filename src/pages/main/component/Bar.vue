@@ -162,6 +162,7 @@ export default {
         justify-content: center;
         align-items: center;
         position:relative;
+        height:max-content;
         &__li{
             width:calc(100% / 6);
             text-align: left;
