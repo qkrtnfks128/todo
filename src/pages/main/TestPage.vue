@@ -17,8 +17,6 @@
             :rounded-corners="true"
             :animate="true"
             :inline="true"
-            :glow="10"
-            
         >
         </StarRating>
         <h2>Read Only Stars</h2>
@@ -54,7 +52,7 @@ export default {
     data(){
         return{
             maxValue:155,
-            minValue:88,
+            minValue:90,
             label1:'최고',
             label2:'최저',
             labelValue1:130,
@@ -68,7 +66,7 @@ export default {
     },
     methods: {
         setRating :function(rating) {
-            this.rating = "제 점수는 " + rating + " stars 입니다";
+            this.rating = "제 점수는 " + rating + "점입니다";
         }
     },
 }

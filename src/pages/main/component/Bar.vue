@@ -8,14 +8,13 @@
     <!-- 도트 -->
         <!-- 최대 값 -->
         <li class ="graph__dot dot1"
+            :style="{'border-color':this.dotColor}"
             @click="tooltipClick1()">
             <span class="graph__dot__tooltip" v-show="tooltip1==true">{{label1}} {{maxValue}}</span>
         </li>
         <!-- 최소 값 -->
         <li class ="graph__dot dot2" 
-        :style="{
-            'border-color':this.dotColor, 
-            }"
+        :style="{'border-color':this.dotColor}"
         @click="tooltipClick2()">
             <span class="graph__dot__tooltip" v-show="tooltip2==true">{{label2}} {{minValue}}</span>
         </li>
@@ -81,39 +80,151 @@ export default {
         tooltipClick1() {
             this.tooltip1 = !this.tooltip1
             this.tooltip2 = false
+            this.dotcolor()
         },
         tooltipClick2() {
             this.tooltip1 = false
             this.tooltip2 = !this.tooltip2
+            this.dotcolor()
+            console.log('무야호')
+        },
+        dotcolor(){
+            var dot1percent = (this.maxValue-(this.labelValue1-this.labelValuePlus))/(this.labelValuePlus*6)*100
+            var dot2percent = (this.minValue-(this.labelValue2-this.labelValuePlus))/(this.labelValuePlus*6)*100
+            switch (true) {
+                case (dot1percent < 16.5) :{
+                    document.querySelector(".dot1").style.borderColor = this.graphBGC1;
+                    break;
+                }
+                case (dot1percent < 33) :{
+                    document.querySelector(".dot1").style.borderColor=this.graphBGC2;
+                    break;
+                }
+                case (dot1percent < 49.5) :{
+                    document.querySelector(".dot1").style.borderColor=this.graphBGC3;
+                    break;
+                }
+                case (dot1percent < 66) :{
+                    document.querySelector(".dot1").style.borderColor=this.graphBGC4;
+                    break;
+                }
+                case (dot1percent < 82.5) :{
+                    document.querySelector(".dot1").style.borderColor=this.graphBGC5;
+                    break;
+                }
+                case (dot1percent < 100) :{
+                    document.querySelector(".dot1").style.borderColor=this.graphBGC6;
+                    break;
+                }
+            }
+            switch (true) {
+                case (dot2percent < 16.5) :{
+                    document.querySelector(".dot2").style.borderColor = this.graphBGC1;
+                    break;
+                }
+                case (dot2percent < 33) :{
+                    document.querySelector(".dot2").style.borderColor=this.graphBGC2;
+                    break;
+                }
+                case (dot2percent < 49.5) :{
+                    document.querySelector(".dot2").style.borderColor=this.graphBGC3;
+                    break;
+                }
+                case (dot2percent < 66) :{
+                    document.querySelector(".dot2").style.borderColor=this.graphBGC4;
+                    break;
+                }
+                case (dot2percent < 82.5) :{
+                    document.querySelector(".dot2").style.borderColor=this.graphBGC5;
+                    break;
+                }
+                case (dot2percent < 100) :{
+                    document.querySelector(".dot2").style.borderColor=this.graphBGC6;
+                    break;
+                }
+            }
         }
     },
-
+        
     mounted(){
-            console.log('무야호');
-            console.log(this.tooltip);
-            document.querySelector(".dot1").animate([
-                {left:'0%'},
-                {left:(this.maxValue-(this.labelValue1-this.labelValuePlus))/(this.labelValuePlus*6)*100+ '%'}
-            ],
-            {
-                duration:2000,
-                fill: "forwards",
-                easing:"ease"
-            }
+            document.querySelector(".dot1").animate(
+                [
+                    {left:'0%'},
+                    {left:(this.maxValue-(this.labelValue1-this.labelValuePlus))/(this.labelValuePlus*6)*100+ '%'}
+                ],
+                {
+                    duration:2000,
+                    fill: "forwards",
+                    easing:"ease"
+                }
             );
-
-            document.querySelector(".dot2").animate([
-                {left:'0%'},
-                {left:(this.minValue-(this.labelValue2-this.labelValuePlus))/(this.labelValuePlus*6)*100+'%'}
-            ],
-            {
-                duration:2000,
-                fill: "forwards",
-                easing:"ease"
-
+            document.querySelector(".dot2").animate(
+                [
+                    {left:'0%'},
+                    {left:(this.minValue-(this.labelValue2-this.labelValuePlus))/(this.labelValuePlus*6)*100+'%'}
+                ],
+                {
+                    duration:2000,
+                    fill: "forwards",
+                    easing:"ease"
+                }
+            );
+            
+            var dot1percent = (this.maxValue-(this.labelValue1-this.labelValuePlus))/(this.labelValuePlus*6)*100
+            var dot2percent = (this.minValue-(this.labelValue2-this.labelValuePlus))/(this.labelValuePlus*6)*100
+            switch (true) {
+                case (dot1percent < 16.5) :{
+                    document.querySelector(".dot1").style.borderColor = this.graphBGC1;
+                    break;
+                }
+                case (dot1percent < 33) :{
+                    document.querySelector(".dot1").style.borderColor=this.graphBGC2;
+                    break;
+                }
+                case (dot1percent < 49.5) :{
+                    document.querySelector(".dot1").style.borderColor=this.graphBGC3;
+                    break;
+                }
+                case (dot1percent < 66) :{
+                    document.querySelector(".dot1").style.borderColor=this.graphBGC4;
+                    break;
+                }
+                case (dot1percent < 82.5) :{
+                    document.querySelector(".dot1").style.borderColor=this.graphBGC5;
+                    break;
+                }
+                case (dot1percent < 100) :{
+                    document.querySelector(".dot1").style.borderColor=this.graphBGC6;
+                    break;
+                }
             }
-        );
-    },
+            switch (true) {
+                case (dot2percent < 16.5) :{
+                    document.querySelector(".dot2").style.borderColor = this.graphBGC1;
+                    break;
+                }
+                case (dot2percent < 33) :{
+                    document.querySelector(".dot2").style.borderColor=this.graphBGC2;
+                    break;
+                }
+                case (dot2percent < 49.5) :{
+                    document.querySelector(".dot2").style.borderColor=this.graphBGC3;
+                    break;
+                }
+                case (dot2percent < 66) :{
+                    document.querySelector(".dot2").style.borderColor=this.graphBGC4;
+                    break;
+                }
+                case (dot2percent < 82.5) :{
+                    document.querySelector(".dot2").style.borderColor=this.graphBGC5;
+                    break;
+                }
+                case (dot2percent < 100) :{
+                    document.querySelector(".dot2").style.borderColor=this.graphBGC6;
+                    break;
+                }
+            }
+        },
     data(){
         return{ 
             tooltip1:false,
@@ -188,9 +299,11 @@ export default {
             background-color: #fff;
             border:3px solid #9c9c9c;
             border-radius: 50%;
+            left:0;
             top:50%;
             transform:translate(-50%,-50%);
             box-shadow:0 3px 6px rgba(0, 0, 0 ,.16);
+            cursor: pointer;
             &__tooltip{
                 position: absolute;
                 top: -20px;
