@@ -10,13 +10,13 @@
         <li class ="graph__dot dot1"
             :style="{'border-color':this.dotColor}"
             @click="tooltipClick1()">
-            <span class="graph__dot__tooltip" v-show="tooltip1==true">{{label1}} {{maxValue}}</span>
+            <span class="graph__dot__tooltip" v-if="tooltip1==true">{{label1}} {{maxValue}}</span>
         </li>
         <!-- 최소 값 -->
         <li class ="graph__dot dot2" 
         :style="{'border-color':this.dotColor}"
         @click="tooltipClick2()">
-            <span class="graph__dot__tooltip" v-show="tooltip2==true">{{label2}} {{minValue}}</span>
+            <span class="graph__dot__tooltip" v-if="tooltip2==true">{{label2}} {{minValue}}</span>
         </li>
     </ul>
 
@@ -78,13 +78,13 @@ export default {
     },
     methods: {
         tooltipClick1() {
-            this.tooltip1 = !this.tooltip1
+            this.tooltip1 = true
             this.tooltip2 = false
             this.dotcolor()
         },
         tooltipClick2() {
             this.tooltip1 = false
-            this.tooltip2 = !this.tooltip2
+            this.tooltip2 = true
             this.dotcolor()
             console.log('무야호')
         },

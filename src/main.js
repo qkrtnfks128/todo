@@ -4,6 +4,8 @@ import 'chart.js'
 import 'hchs-vue-charts'
 Vue.use(window.VueCharts);
 
+
+
 //common.js (공통.js)
 import common from './assets/js/common'
 Vue.use(common)
