@@ -4,3 +4,4 @@ export { default as Datepicker } from './sub/Datepicker';
 export { default as BetterScroll } from './sub/BetterScroll';
 export { default as Reservation } from './sub/Reservation';
 export { default as TestPage } from './main/TestPage';
+export { default as Bartest } from './main/Bartest';

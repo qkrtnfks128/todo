@@ -27,46 +27,12 @@
 
 <script>
 import ListItem from '../../components/Swiper.vue'
-//21.8.19 chartjs-plugin-annotation
- import ChartJSAnnotation from 'chartjs-plugin-annotation'
-
 
 export default {
     mounted() {
-        this.addPlugin(ChartJSAnnotation);
-        this.renderChart(this.chartData, this.chartOptions);
+        
     },
     computed: {
-        annotations() {
-        return [
-          // 라인 어노테이션
-          this.lineAnnotationFactory({
-            value: Number(this.averageAllUser),
-            borderColor: "#989898",
-          }),
-          this.lineAnnotationFactory({
-            value: Number(this.average),
-            borderColor: this.color,
-          }),
-
-          // 박스 어노테이션
-          ...this.data
-            .filter((datum) => {
-              return datum.highlighted;
-            })
-            .map((datum2) => {
-              return this.boxAnnotationFactory({
-                xMin: dayjs(datum2.timestamp)
-                  .subtract(30, "minute")
-                  .format("YYYY-MM-DD HH:mm:ss"),
-                xMax: dayjs(datum2.timestamp)
-                  .add(30, "minute")
-                  .format("YYYY-MM-DD HH:mm:ss"),
-                backgroundColor: `${this.color}${0x15}`,
-              });
-            }),
-        ];
-      },
     },
     components: {
         ListItem,

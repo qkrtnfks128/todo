@@ -4,6 +4,11 @@ import 'chart.js'
 import 'hchs-vue-charts'
 Vue.use(window.VueCharts);
 
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
+
+Vue.component('apexchart', VueApexCharts)
+
 
 
 //common.js (공통.js)
@@ -21,6 +26,7 @@ import { Datepicker} from './pages';
 import { BetterScroll} from './pages';
 import { Reservation} from './pages';
 import { TestPage} from './pages';
+import { Bartest} from './pages';
 
 //components
 import { Layout } from './components'
@@ -59,6 +65,11 @@ const routes = [
 		path: '/TestPage',
 		component: TestPage,
 		meta: { page: 5 },
+	},
+	{
+		path: '/Bartest',
+		component: Bartest,
+		meta: { page: 6 },
 	},
 ];
 
