@@ -1,5 +1,6 @@
 <template>
     <div class="test">
+        <apexchart width="330" type="line" :options="options1" :series="series1"></apexchart>
         <StarRating
             :increment="0.5"
             :clearable="true"
@@ -43,7 +44,7 @@
         </div>
         <!-- apexchart -->
         <apexchart width="300" type="bar" :options="options" :series="series"></apexchart>
-        <apexchart width="300" type="line" :options="options1" :series="series1"></apexchart>
+        
     </div>  
 </template>
 
@@ -51,7 +52,6 @@
 import Bar from './component/Bar.vue';
 import StarRating from 'vue-star-rating'
 //npm install vue-star-rating
-
 export default {
     components:{
         Bar,
@@ -72,7 +72,7 @@ export default {
             rating: "선택한 별이 없습니다",
             thisRating:3,
 
-            //apexchart
+        //******************* apexchart ********************
             options: {
                 chart: {
                 id: 'vuechart-example'
@@ -86,63 +86,120 @@ export default {
                 name: 'series-1',
                 data: [30, 40, 45, 50, 49, 60, 70, 91]
             }],
-            //
+        //******************* apexchart ********************
             options1: {
                 chart: {
                     id: 'vuechart-example',
                     toolbar:{
-                        show:false
-                    }
+                        show:true,
+                        tools:{
+                            zoom:true,
+                            download:false,
+                            zoomin: true,
+                            zoomout: true,
+                        },
+                        autoSelected:'zoom'
+                    },
+                    zoom:{
+                        enabled:true,
+                        type:'x',
+                        autoScaleYaxis:true
+                    },
+                    events:{
+                        markerClick: function(){
+                            var dot = document.querySelector(".test .apexcharts-xaxistooltip")
+                            dot.style.display='block';
+                            console.log(dot)
+                        }
+                    },
                 },
                 xaxis: {
-                    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+                    enabled:true,
+                    // type-category: 좌우 이동시 점단위로 끊김
+                    type:'date',
+                    categories: ['05.01', '05.02', '05.03', '05.04', '05.05', '05.06', '05.07', '05.08'],
                     labels:{
+                        format:'MM.dd',
                         style:{
-                            colors:['#707070','#707070','#707070','#707070','#707070','#707070','#707070','#707070']
-                        }
+                            colors:['#707070','#707070','#707070','#707070','#707070','#707070','#707070','#707070'],
+                            fontSize:'1rem'
+                        },
+                        textAnchor:'middle',
+                        // offsetX:7,
+                        rotate:0,
+                        hideOverlappingLabels:true,
+                        // trim:true,
+                    },
+                    tooltip: {
+                        formatter: function(value,{series, seriesIndex, dataPointIndex, w}){
+                            return series[seriesIndex][dataPointIndex] + 'kg'
+                        },
+                    },
+                    // x축 라벨 보여지는 갯수설정-type:datetime일때는 적용안됨
+                    tickAmount:2,
+                    // 양 옆 여백 - type:datetime 일때는 between적용안됨 (마지막 라벨이 잘림)
+                    tickPlacement:'on',
+                    axisBorder:{
+                        show:false
+                    },
+                    axisTicks:{
+                        show:false
                     }
                 },
                 yaxis:{
                     max:70,
                     min:30,
-                    tickAmount:4
+                    tickAmount:4,
+                    labels: {
+                        style:{
+                            colors:'#BBB',
+                            fontSize:'1rem'
+                        },
+                        offsetY:3,
+                    },
+                    
                 },
                 markers: {
                     size: 3,
-                    strokeColors:"#E91E63",
-                    strokeWidth:3,
+                    strokeColors:"#7080FF",
+                    strokeWidth:2,
                     colors:"white",
+                    dropShadow:{
+                        dnabled:true,
+                        top:0,
+                        left:3,
+                        blur:10,
+                        color:'#000',
+                        opacity:.16
+                    },
                     hover: {
                         size: undefined,
                         sizeOffset: 1
                     },
-                    onClick:function(){
-                        document.querySelector(".arrow_box").style('display','block');
-                    }
+                    onClick:function(e){
+                        document.querySelector(".test .apexcharts-xaxistooltip.apexcharts-active").style('display','block');
+                    },
+                    // offsetX:20
                 },
                 tooltip:{
                     style:{
                         fontSize:'12px'
                     },
-                    custom:
-                        function({series, seriesIndex, dataPointIndex, w}){
-                            return '<div class="arrow_box">' +
-                            series[seriesIndex][dataPointIndex] + 'kg' +
-                            '</div>'
-                        
-                    },
-                },
-                toolbar:{
-                    show:false
+                    // custom:
+                    //     function({series, seriesIndex, dataPointIndex, w}){
+                    //         return '<div class="arrow_box">' +
+                    //         series[seriesIndex][dataPointIndex] + 'kg' +
+                    //         '</div>'
+                    //     },
                 },
                 stroke:{
                     width:2,
-                    colors:["#E91E63"]
+                    colors:["#7080FF"],
+                    lineCap:'round',
                 }
-                
             },
             series1: [{
-                data: [50, 48, 47, 50, 46, 55, 58, 60]
+                data: [45,50,51,52,54,48,60,58]
             }]
         }
     },
@@ -159,7 +216,6 @@ export default {
         } 
     },
     mounted(){
-        
 
     }
 }
@@ -181,8 +237,8 @@ export default {
 .image_container img{
     width: 100%;
 }
-/* tooltip */
-.arrow_box{
+/* ******************* APEXCHART ****************** */
+/* .arrow_box{
     padding:6px 9px;
     font-size:12px;
     border-radius: 3px;
@@ -190,8 +246,6 @@ export default {
     height:100%;
     box-sizing: border-box;
     position: relative;
-    left: 75%;
-    top: -20px;
     background-color:white;
     box-shadow:0 3px 10px rgba(0,0, 0 ,.16);
 }
@@ -204,14 +258,29 @@ export default {
     margin-left:-5px;
     border-style:solid;
     border-color:white transparent transparent transparent; 
-}
+} */
 .test .apexcharts-tooltip {
-    border:none;
-    background:none;
-    box-shadow: none;
-    overflow:visible;
+    display:none;
 }
 .test .apexcharts-xaxistooltip.apexcharts-active{ 
+    top:-5px !important;
+    background-color:white;
+    box-shadow:0 3px 10px rgba(0,0, 0 ,.16);
+    border: none;
+    padding:6px;
+    border-radius: .5rem;
+    color:#7080FF;
+    font-size:18px;
+}
+.test .apexcharts-xaxistooltip-bottom:before {
     display:none;
+}
+.test .apexcharts-xaxistooltip.apexcharts-active:after{
+    border-bottom-color: white;
+    top: 100%;
+    border-width: 5px;
+    border-color: white transparent transparent transparent;
+    left: 53.5%;
+    border-radius: none;
 }
 </style>
