@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>chart</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
   <style>
     .chartBox{width:700px;}
   </style>
@@ -14,6 +16,7 @@
   <div class="chartBox">
     <canvas id="myChart"></canvas>
   </div>
+  <div id="viz"></div>
   <script>
     //setup
     const data={
@@ -79,7 +82,22 @@
       document.getElementById('myChart'),
       config
     );
+    //d3 chart
+    var sampleSVG = d3.select("#viz")
+        .append("svg")
+        .attr("width", 100)
+        .attr("height", 100);    
 
+    sampleSVG.append("circle")
+        .style("stroke", "gray")
+        .style("fill", "white")
+        .attr("r", 40)
+        .attr("cx", 50)
+        .attr("cy", 50)
+
+        .on("mouseover", function(){d3.select(this).style("fill", "aliceblue");})
+        .on("mouseout", function(){d3.select(this).style("fill", "white");});
+    
   </script>
 
 </body>

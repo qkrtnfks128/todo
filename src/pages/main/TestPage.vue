@@ -44,14 +44,13 @@
         </div>
         <!-- apexchart -->
         <apexchart width="300" type="bar" :options="options" :series="series"></apexchart>
-        
     </div>  
 </template>
 
 <script>
 import Bar from './component/Bar.vue';
 import StarRating from 'vue-star-rating'
-//npm install vue-star-rating
+
 export default {
     components:{
         Bar,

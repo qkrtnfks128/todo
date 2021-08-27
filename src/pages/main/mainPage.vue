@@ -65,6 +65,7 @@
         <button class="router"><router-link to="/Reservation">예약</router-link></button>
         <button class="router"><router-link to="/TestPage">테스트페이지</router-link></button>
         <button class="router"><router-link to="/Bartest">바테스트페이지</router-link></button>
+        <button class="router"><router-link to="/D3chart">D3chart페이지</router-link></button>
         <br/>
     </div>
 </template>

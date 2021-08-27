@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
+//chart.js
 import 'chart.js'
 import 'hchs-vue-charts'
 Vue.use(window.VueCharts);
 
+
+//apexcharts
 import VueApexCharts from 'vue-apexcharts'
 Vue.use(VueApexCharts)
-
 Vue.component('apexchart', VueApexCharts)
-
-
 
 //common.js (공통.js)
 import common from './assets/js/common'
@@ -27,6 +27,7 @@ import { BetterScroll} from './pages';
 import { Reservation} from './pages';
 import { TestPage} from './pages';
 import { Bartest} from './pages';
+import { D3test} from './pages';
 
 //components
 import { Layout } from './components'
@@ -70,6 +71,11 @@ const routes = [
 		path: '/Bartest',
 		component: Bartest,
 		meta: { page: 6 },
+	},
+	{
+		path: '/D3chart',
+		component: D3test,
+		meta: { page: 7},
 	},
 ];
 
