@@ -6,3 +6,4 @@ export { default as Reservation } from './sub/Reservation';
 export { default as TestPage } from './main/TestPage';
 export { default as Bartest } from './main/Bartest';
 export { default as D3test } from './main/D3test';
+export { default as Fusioncharts } from './main/Fusioncharts';

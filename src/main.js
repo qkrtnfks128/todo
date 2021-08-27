@@ -5,6 +5,13 @@ import 'chart.js'
 import 'hchs-vue-charts'
 Vue.use(window.VueCharts);
 
+//vue-fusioncharts
+import VueFusionCharts from 'vue-fusioncharts';
+
+// import FusionCharts modules and resolve dependency
+import FusionCharts from 'fusioncharts';
+import Charts from 'fusioncharts/fusioncharts.charts';
+Vue.use(VueFusionCharts, FusionCharts, Charts);
 
 //apexcharts
 import VueApexCharts from 'vue-apexcharts'
@@ -28,6 +35,7 @@ import { Reservation} from './pages';
 import { TestPage} from './pages';
 import { Bartest} from './pages';
 import { D3test} from './pages';
+import { Fusioncharts} from './pages';
 
 //components
 import { Layout } from './components'
@@ -76,6 +84,11 @@ const routes = [
 		path: '/D3chart',
 		component: D3test,
 		meta: { page: 7},
+	},
+	{
+		path: '/Fusioncharts',
+		component: Fusioncharts,
+		meta: { page: 8},
 	},
 ];
 
