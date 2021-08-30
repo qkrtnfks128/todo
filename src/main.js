@@ -34,8 +34,8 @@ import { BetterScroll} from './pages';
 import { Reservation} from './pages';
 import { TestPage} from './pages';
 import { Bartest} from './pages';
-import { D3test} from './pages';
-import { Fusioncharts} from './pages';
+import { Chartjs} from './pages';
+import { StockChart} from './pages';
 
 //components
 import { Layout } from './components'
@@ -81,13 +81,13 @@ const routes = [
 		meta: { page: 6 },
 	},
 	{
-		path: '/D3chart',
-		component: D3test,
+		path: '/Chartjs',
+		component: Chartjs,
 		meta: { page: 7},
 	},
 	{
-		path: '/Fusioncharts',
-		component: Fusioncharts,
+		path: '/StockChart',
+		component: StockChart,
 		meta: { page: 8},
 	},
 ];

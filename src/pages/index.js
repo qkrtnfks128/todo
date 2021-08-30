@@ -5,5 +5,5 @@ export { default as BetterScroll } from './sub/BetterScroll';
 export { default as Reservation } from './sub/Reservation';
 export { default as TestPage } from './main/TestPage';
 export { default as Bartest } from './main/Bartest';
-export { default as D3test } from './main/D3test';
-export { default as Fusioncharts } from './main/Fusioncharts';
+export { default as Chartjs } from './main/Chartjs';
+export { default as StockChart } from './main/StockChart';

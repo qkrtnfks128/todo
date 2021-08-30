@@ -1,13 +1,13 @@
 <template>
-  <D3chart></D3chart>
+  <ChartjsLine></ChartjsLine>
 </template>
 
 <script>
-import D3chart from './component/D3chart.vue';
+import ChartjsLine from './component/ChartjsLine.vue';
 
 export default {
     components:{
-        D3chart
+        ChartjsLine
     } 
         
     }
