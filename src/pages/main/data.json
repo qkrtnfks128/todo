@@ -1,6 +1,6 @@
 {
     "chart": {
-        "type": "Candles",
+        "type": "Spline",
         "data": [
             [
                 1552453200000,
@@ -5050,7 +5050,10 @@
                     4157.006014844039
                 ]
             ],
-            "settings": {}
+            "settings": {
+                "color": "#1baddd"
+            }
+            
         },
         {
             "name": "EMA, 43",
