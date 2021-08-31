@@ -67,6 +67,10 @@
         <button class="router"><router-link to="/Bartest">바페이지</router-link></button>
         <button class="router"><router-link to="/Chartjs">ChartjsLine페이지</router-link></button>
         <button class="router"><router-link to="/StockChart">chart페이지</router-link></button>
+        <button class="router"><router-link to="/TradingVue">TradingVue</router-link></button>
+        <br/>
+        <button class="router"><router-link to="/D3">D3</router-link></button>
+        <button class="router"><router-link to="/D3chart">D3chart</router-link></button>
         <br/>
     </div>
 </template>

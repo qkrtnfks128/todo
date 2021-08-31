@@ -4,7 +4,15 @@
         <LineChart
 			:chart-data="datacollection"
 			:styles="myStyles"
-			:options="datacollection.options"></LineChart>
+			:options="datacollection.options">
+        </LineChart>
+        <apexchart
+                type="line"
+                height="100"
+                width="350"
+                :options="mapOptions"
+                :series="mapSeries"
+            ></apexchart>
     </div>
 </template>
 
@@ -21,7 +29,7 @@ export default {
         return{
             datacollection: {
             labels: [
-                '2021-05-10','2021-05-11','2021-05-12','2021-05-13','2021-05-14','2021-05-15','2021-05-16','2021-05-17','2021-05-18','2021-05-19','2021-05-20',
+                
                 ],
             datasets: [
                 {
@@ -29,7 +37,76 @@ export default {
                     borderWidth: 2,
                     pointBackgroundColor: 'white',
                     backgroundColor: 'transparent',
-                    data: [50, 45, 48, 52, 53, 51, 50, 55, 51, 48, 43],
+                    data: [
+                    {t:new Date('2021-07-01T03:00').getTime(), y:90},
+                    {t:new Date('2021-07-02T03:00').getTime(), y:100},
+                    {t:new Date('2021-07-03T03:00').getTime(), y:120},
+                    {t:new Date('2021-07-04T03:00').getTime(), y:150},
+                    {t:new Date('2021-07-05T03:00').getTime(), y:165},
+                    {t:new Date('2021-07-06T03:00').getTime(), y:150},
+                    {t:new Date('2021-07-07T03:00').getTime(), y:189},
+                    {t:new Date('2021-07-08T03:00').getTime(), y:145},
+                    {t:new Date('2021-07-09T03:00').getTime(), y:100},
+                    {t:new Date('2021-07-10T03:00').getTime(), y:90},
+                    {t:new Date('2021-07-11T03:00').getTime(), y:60},
+                    {t:new Date('2021-07-12T03:00').getTime(), y:90},
+                    {t:new Date('2021-07-13T03:00').getTime(), y:55},
+                    {t:new Date('2021-07-14T03:00').getTime(), y:100},
+                    {t:new Date('2021-07-15T03:00').getTime(), y:121},
+                    {t:new Date('2021-07-16T03:00').getTime(), y:150},
+                    {t:new Date('2021-07-17T03:00').getTime(), y:200},
+                    {t:new Date('2021-07-18T03:00').getTime(), y:145},
+                    {t:new Date('2021-07-19T03:00').getTime(), y:100},
+                    {t:new Date('2021-07-20T03:00').getTime(), y:90},
+                    {t:new Date('2021-07-21T03:00').getTime(), y:70},
+                    {t:new Date('2021-07-22T03:00').getTime(), y:90},
+                    {t:new Date('2021-07-23T03:00').getTime(), y:100},
+                    {t:new Date('2021-07-24T03:00').getTime(), y:81},
+                    {t:new Date('2021-07-25T03:00').getTime(), y:61},
+                    {t:new Date('2021-07-26T03:00').getTime(), y:111},
+                    {t:new Date('2021-07-27T03:00').getTime(), y:40},
+                    {t:new Date('2021-07-28T03:00').getTime(), y:180},
+                    {t:new Date('2021-07-29T03:00').getTime(), y:250},
+                    {t:new Date('2021-08-01T03:00').getTime(), y:280},
+                    {t:new Date('2021-08-02T03:00').getTime(), y:100},
+                    {t:new Date('2021-08-03T03:00').getTime(), y:120},
+                    {t:new Date('2021-08-04T03:00').getTime(), y:150},
+                    {t:new Date('2021-08-05T03:00').getTime(), y:165},
+                    {t:new Date('2021-08-06T03:00').getTime(), y:150},
+                    {t:new Date('2021-08-07T03:00').getTime(), y:200},
+                    {t:new Date('2021-08-08T03:00').getTime(), y:145},
+                    {t:new Date('2021-08-09T03:00').getTime(), y:100},
+                    {t:new Date('2021-08-10T03:00').getTime(), y:90},
+                    {t:new Date('2021-08-11T03:00').getTime(), y:70},
+                    {t:new Date('2021-08-12T03:00').getTime(), y:60},
+                    {t:new Date('2021-08-13T03:00').getTime(), y:50},
+                    {t:new Date('2021-08-14T03:00').getTime(), y:45},
+                    {t:new Date('2021-08-15T03:00').getTime(), y:71},
+                    {t:new Date('2021-08-16T03:00').getTime(), y:100},
+                    {t:new Date('2021-08-17T03:00').getTime(), y:150},
+                    {t:new Date('2021-08-18T03:00').getTime(), y:145},
+                    {t:new Date('2021-08-19T03:00').getTime(), y:100},
+                    {t:new Date('2021-08-20T03:00').getTime(), y:90},
+                    {t:new Date('2021-08-21T03:00').getTime(), y:70},
+                    {t:new Date('2021-08-22T03:00').getTime(), y:90},
+                    {t:new Date('2021-08-23T03:00').getTime(), y:40},
+                    {t:new Date('2021-08-24T03:00').getTime(), y:45},
+                    {t:new Date('2021-08-25T03:00').getTime(), y:49},
+                    {t:new Date('2021-08-26T03:00').getTime(), y:111},
+                    {t:new Date('2021-08-27T03:00').getTime(), y:140},
+                    {t:new Date('2021-08-28T03:00').getTime(), y:180},
+                    {t:new Date('2021-08-28T06:00').getTime(), y:200},
+                    {t:new Date('2021-08-28T09:00').getTime(), y:210},
+                    {t:new Date('2021-08-28T12:00').getTime(), y:260},
+                    {t:new Date('2021-08-28T15:00').getTime(), y:220},
+                    {t:new Date('2021-08-28T18:00').getTime(), y:180},
+                    {t:new Date('2021-08-28T21:00').getTime(), y:120},
+                    {t:new Date('2021-08-29T03:00').getTime(), y:100},
+                    {t:new Date('2021-08-29T06:00').getTime(), y:80},
+                    {t:new Date('2021-08-29T09:00').getTime(), y:85},
+                    {t:new Date('2021-08-29T12:00').getTime(), y:90},
+                    {t:new Date('2021-08-29T15:00').getTime(), y:75},
+                    ],
                     tension: 0.1,
                     
                 }
@@ -80,16 +157,17 @@ export default {
                     yAxes: [{
                         display:true,
                         offset:true,
-                        suggestedMin: 40,
-                        suggestedMax: 70,
+                        
+                        
                         ticks: {
                             beginAtZero: false,
                         },
                     }],
                     xAxes: [{
                         type:'time',
+                        max:new Date().getTime(),
                         time:{
-                            unit:'day',
+                            // unit:'day',
                             //stepSize: 3, // I'm using 3 day intervals here
                         }
                     }]
@@ -123,7 +201,9 @@ export default {
                         },
                     }
                 }
+
                 }
+            
             }
         }
     },

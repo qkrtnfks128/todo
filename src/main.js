@@ -36,6 +36,9 @@ import { TestPage} from './pages';
 import { Bartest} from './pages';
 import { Chartjs} from './pages';
 import { StockChart} from './pages';
+import { TradingVue} from './pages';
+import { D3} from './pages';
+import { D3chart} from './pages';
 
 //components
 import { Layout } from './components'
@@ -89,6 +92,21 @@ const routes = [
 		path: '/StockChart',
 		component: StockChart,
 		meta: { page: 8},
+	},
+	{
+		path: '/TradingVue',
+		component: TradingVue,
+		meta: { page: 9},
+	},
+	{
+		path: '/D3',
+		component: D3,
+		meta: { page: 9},
+	},
+	{
+		path: '/D3chart',
+		component: D3chart,
+		meta: { page: 9},
 	},
 ];
 

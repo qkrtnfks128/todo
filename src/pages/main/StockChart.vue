@@ -5,6 +5,7 @@
             <apexchart
                 type="line"
                 height="230"
+                width="350"
                 :options="primaryOptions"
                 :series="primarySeries"
             ></apexchart>
@@ -13,6 +14,7 @@
             <apexchart
                 type="line"
                 height="100"
+                width="350"
                 :options="mapOptions"
                 :series="mapSeries"
             ></apexchart>
@@ -24,9 +26,7 @@
 export default {
     name: "TestGraph",
     data: function () {
-        // var colors=['red','blue','green']
-        // var colors1=Object.assing([],colors);
-        let data = [
+        var data = [
             [new Date('2021-07-01T03:00').getTime(), 90],
             [new Date('2021-07-02T03:00').getTime(), 100],
             [new Date('2021-07-03T03:00').getTime(), 120],
@@ -95,7 +95,7 @@ export default {
             [new Date('2021-08-29T09:00').getTime(), 85],
             [new Date('2021-08-29T12:00').getTime(), 90],
             [new Date('2021-08-29T15:00').getTime(), 75],
-
+            
             // -9시 시차가있음
         ];
 
@@ -139,11 +139,12 @@ export default {
                     // },
                     strokeWidth:0,
                     colors:'blue',
-                    // colors:function(){
-                    //조건부로 점 색깔 넣기
-                    //     if(data.value<50) {return 'red'}
-                    //     if(50<data.value<150) {return 'blue'}
-                    //     if(data.value>150) {return 'yellow'}
+                    // colors:function({series, seriesIndex, dataPointIndex, w}){
+                    // var value = series[seriesIndex][dataPointIndex]
+                    // //조건부로 점 색깔 넣기
+                    //     if(value<50) {return 'red'}
+                    //     if(50<value<150) {return 'blue'}
+                    //     if(value>150) {return 'yellow'}
                     // },
                     hover: {
                         size: undefined,
@@ -168,7 +169,6 @@ export default {
                 fill: {
                     opacity: 1,
                 },
-
                 xaxis: {
                     enabled:true,
                     type: "datetime",

@@ -7,3 +7,6 @@ export { default as TestPage } from './main/TestPage';
 export { default as Bartest } from './main/Bartest';
 export { default as Chartjs } from './main/Chartjs';
 export { default as StockChart } from './main/StockChart';
+export { default as TradingVue } from './main/TradingVue';
+export { default as D3 } from './main/D3';
+export { default as D3chart } from './main/D3chart';
