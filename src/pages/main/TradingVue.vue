@@ -3,8 +3,9 @@
         <h2>tradingvue</h2>
         <TradingVue
             :data="this.$data"
+            :overlays="overlays"
             :toolbar="false"
-            :colorBack="'white'"
+            :color-back="'white'"
             :width="500"
             :height="200">
         </TradingVue>
@@ -19,7 +20,8 @@ import TradingVue from 'trading-vue-js'
 //npm install trading-vue-js --save
 export default {
     components: { TradingVue },
-    props:{
+    props:[
+            'width', 'height', 'colors'
         // titleTxt: {
         // type: String,
         // default: 'TradingVue.js'
@@ -134,12 +136,14 @@ export default {
         // type: Boolean,
         // default: false
         // }
-    },
+        
+    ],
+
     data() {
         return {
             overlays: [],
             chart:{
-                type:"Splines",
+                type:"Spline",
                 data:[
                     [1587272400000, 7240.1, 7240.2, 7120, 7131, 709.93],
                     [1587276000000, 7130.96, 7174, 7120, 7169.1, 485.44],
@@ -194,7 +198,8 @@ export default {
                     [1587452400000, 6887.7, 6898.1, 6871.2, 6893.6, 200.66],
                 ],
                 settings:{
-                    color: "#1baddd"
+                    color: "#1baddd",
+                    lineWidth:2
                 }
             },
             grid:{},
