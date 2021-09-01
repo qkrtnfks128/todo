@@ -38,6 +38,12 @@ export default {
             .attr("r", 30)
             .style("fill", "black")
 
+            svg
+            .append("circle")
+            .attr("cx", 115)
+            .attr("cy", 90)
+            .attr("r", 4)
+            .style("fill", "white")
 
             svg
             .append("circle")
@@ -55,6 +61,13 @@ export default {
 
             svg
             .append("circle")
+            .attr("cx", 215)
+            .attr("cy", 90)
+            .attr("r", 4)
+            .style("fill", "white")
+
+            svg
+            .append("circle")
             .attr("cx", 150)
             .attr("cy", 150)
             .attr("r", 30)
@@ -62,7 +75,7 @@ export default {
         },
         linechart(){
             
-            
+
 
 
         }
