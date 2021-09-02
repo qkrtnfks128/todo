@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일업로드(제이쿼리)</title>
+    <style>
+        .filebox{
+            display:flex;
+            align-items:baseline;
+        }
+        .image-upload>input {
+            display: none;
+        }
+        .upload-icon {
+            width: 80px;
+            height: 77px;
+            background-color:#f7f6f6;
+            border: 1px solid #f2f2f2;
+            border-style: solid;
+            border-radius: 18px;
+            overflow: hidden;
+            box-sizing: border-box;
+            position:relative;
+            margin-right:5px;
+            cursor: pointer;
+        }
+        .image-upload:last-child .upload-icon{
+            width:50px;
+            height:47px;
+            border-radius: 13px;
+        }
+
+        .upload-icon .icon {
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%)
+        }
+        .prev {
+            display: none;
+            width: 95px;
+            height: 92px;
+            /* margin: 2px; */
+            border-radius: 15px;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%)
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<form class="filebox">
+    <div class="image-upload">
+        <label for="file-input">
+            <div class="upload-icon">
+                <img class="icon" src="https://image.flaticon.com/icons/png/128/61/61112.png">
+                <img class="prev" src="https://image.flaticon.com/icons/png/128/61/61112.png">
+                </div>
+            </label>
+        <input id="file-input" type="file" />
+    </div>
+    <div class="image-upload">
+        <label for="file-input2">
+            <div class="upload-icon">
+                <img class="icon" src="https://image.flaticon.com/icons/png/128/61/61112.png">
+                <img class="prev" src="https://image.flaticon.com/icons/png/128/61/61112.png">
+                </div>
+            </label>
+        <input id="file-input2" type="file" />
+    </div>
+    <div class="image-upload">
+        <label for="file-input3">
+            <div class="upload-icon">
+                <img class="icon" src="https://image.flaticon.com/icons/png/128/61/61112.png">
+                <img class="prev" src="https://image.flaticon.com/icons/png/128/61/61112.png">
+                </div>
+            </label>
+        <input id="file-input3" type="file" />
+    </div>
+    <div class="image-upload">
+        <label for="file-input4">
+            <div class="upload-icon">
+                <img class="icon" src="https://image.flaticon.com/icons/png/128/61/61112.png">
+                <img class="prev" src="https://image.flaticon.com/icons/png/128/61/61112.png">
+                </div>
+            </label>
+        <input id="file-input4" type="file" />
+    </div>
+</form>
+
+<script>
+    function readURL(input) {
+    var id = $(input).attr("id");
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+        $('label[for="' + id + '"] .upload-icon').css("border", "none");
+        $('label[for="' + id + '"] .icon').hide();
+        $('label[for="' + id + '"] .prev').attr('src', e.target.result).show();
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+    }
+
+    $("input[id^='file-input']").change(function() {
+    readURL(this);
+    });
+</script>
+</body>
+</html>

@@ -37,6 +37,9 @@
             :labelValuePlus="labelValuePlus"
             >
         </Bar><br/>
+        <Bar>
+            
+        </Bar>
         <!--Thumbnail image -->
         <input type="file" id="image" accept="image/*" @change="setThumbnail(this)"/>
         <div class="image_container">

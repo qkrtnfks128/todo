@@ -18,6 +18,7 @@ import VueApexCharts from 'vue-apexcharts'
 Vue.use(VueApexCharts)
 Vue.component('apexchart', VueApexCharts)
 
+
 //common.js (공통.js)
 import common from './assets/js/common'
 Vue.use(common)
@@ -39,6 +40,7 @@ import { StockChart} from './pages';
 import { TradingVue} from './pages';
 import { D3} from './pages';
 import { D3chart} from './pages';
+import { Imagepage} from './pages';
 
 //components
 import { Layout } from './components'
@@ -107,6 +109,11 @@ const routes = [
 		path: '/D3chart',
 		component: D3chart,
 		meta: { page: 9},
+	},
+	{
+		path: '/Imagepage',
+		component: Imagepage,
+		meta: { page: 10},
 	},
 ];
 

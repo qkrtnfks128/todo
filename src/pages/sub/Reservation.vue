@@ -1,14 +1,18 @@
 <template>
     <div class="test">
         <select name="before" v-model="$store.state.clickTime1">
-            <option value="">시간선택</option>
+            <option value="" selected disabled>시간선택</option>
             <option value="09:00">09:00</option>
             <option value="10:00">10:00</option>
             <option value="11:00">11:00</option>
             <option value="12:00">12:00</option>
         </select>
         <select name="after" v-model="$store.state.clickTime2">
-            <option :value="item.value" v-for="item in time" :key="item.i" >{{item.name}}</option>
+            <option value="" selected disabled>시간선택</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
         </select>
         <select name="userCount" v-model="$store.state.userCount">
             <option value="" selected disabled>인원선택</option>
@@ -21,7 +25,7 @@
         <div class="wrap">
             <div class="wrap__content" v-for="item in reservation" :key="item.i" v-show="item.show==true">
                 <p class="wrap__content__text">{{item.time1}}~{{item.time2}} {{item.userNumber}}명
-                    <span @click="removeTodo()">x</span>
+                    <span @click="removeTodo(item)">x</span>
                 </p>
             </div>
         </div>
@@ -33,18 +37,18 @@ export default {
     data(){
         return{ 
             reservation:[
-                    // {
-                    //     time1:'',
-                    //     time2:'',
-                    //     userNumber: null,
-                    //     show:false
-                    // },
-                    // { 
-                    //     time1:'09:00',
-                    //     time2:'10:30',
-                    //     userNumber:2,
-                    //     show:true
-                    // },
+                    {
+                        time1:'',
+                        time2:'',
+                        userNumber: NaN,
+                        show:false
+                    },
+                    { 
+                        time1:'09:00',
+                        time2:'10:30',
+                        userNumber:2,
+                        show:true
+                    },
                     // { 
                     //     time1:'09:00',
                     //     time2:'10:30',
@@ -100,7 +104,6 @@ export default {
                 time1:this.$store.state.clickTime1,
                 time2:this.$store.state.clickTime2,
                 userNumber:this.$store.state.userCount,
-                userNumber:2,
                 show:true
                 })
             }
@@ -150,6 +153,8 @@ export default {
                 font-family: lato;
                 span{ 
                     font-size:$fz14;
+                    padding:5px;
+                    cursor: pointer;
                 }
             }
             

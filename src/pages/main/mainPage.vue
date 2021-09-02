@@ -70,7 +70,9 @@
         <button class="router"><router-link to="/TradingVue">TradingVue</router-link></button>
         <br/>
         <button class="router"><router-link to="/D3">D3</router-link></button>
-        <button class="router"><router-link to="/D3chart">D3chart</router-link></button>
+        <button class="router"><router-link to="/D3chart">D3chart/countup</router-link></button>
+        <button class="router"><router-link to="/Imagepage">이미지페이지</router-link></button>
+        <button class="router"><a href="/upload.html">이미지업로드</a></button>
         <br/>
     </div>
 </template>
