@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3><b>무야호 게시판</b></h3>
+        <h3><b>무야호 게시판ㅋㅋㅋ</b></h3>
         <div class="board">
             <ul class="board__list">
                 <li>번호</li>
