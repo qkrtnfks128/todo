@@ -18,6 +18,10 @@ import VueApexCharts from 'vue-apexcharts'
 Vue.use(VueApexCharts)
 Vue.component('apexchart', VueApexCharts)
 
+//jw pagination 
+import JwPagination from 'jw-vue-pagination';
+Vue.component('jw-pagination', JwPagination);
+
 
 //common.js (공통.js)
 import common from './assets/js/common'
@@ -40,7 +44,7 @@ import { StockChart} from './pages';
 import { TradingVue} from './pages';
 import { D3} from './pages';
 import { D3chart} from './pages';
-import { Imagepage} from './pages';
+import { Pagenation} from './pages';
 
 //components
 import { Layout } from './components'
@@ -111,8 +115,8 @@ const routes = [
 		meta: { page: 9},
 	},
 	{
-		path: '/Imagepage',
-		component: Imagepage,
+		path: '/Pagenation',
+		component: Pagenation,
 		meta: { page: 10},
 	},
 ];

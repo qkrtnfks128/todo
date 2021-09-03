@@ -27,6 +27,8 @@
     "fusionexport-node-client": "^2.0.0",
     "hammerjs": "^2.0.8",
     "hchs-vue-charts": "^1.2.8",
+    "jw-paginate": "^1.0.4",
+    "jw-vue-pagination": "^1.0.3",
     "moment": "^2.29.1",
     "sass-resources-loader": "^2.2.3",
     "swiper": "^6.8.0",

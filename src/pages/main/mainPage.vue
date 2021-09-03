@@ -71,7 +71,7 @@
         <br/>
         <button class="router"><router-link to="/D3">D3</router-link></button>
         <button class="router"><router-link to="/D3chart">D3chart/countup</router-link></button>
-        <button class="router"><router-link to="/Imagepage">이미지페이지</router-link></button>
+        <button class="router"><router-link to="/Pagenation">페이지네이션</router-link></button>
         <button class="router"><a href="/upload.html">이미지업로드</a></button>
         <br/>
     </div>
@@ -381,6 +381,7 @@ export default {
     }
     .user{
         text-align:left;
+        width:100%
     }
     .input-box{
         display: flex;
