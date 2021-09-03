@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3><b>무야호 게시판</b></h3>
+        <h3><b>무야호 게시판 니나노</b></h3>
         <div class="board">
             <ul class="board__list">
                 <li>번호</li>
@@ -24,7 +24,6 @@
                     :styles="customStyles"
                     :labels="customLabels"
                     @changePage="onChangePage">
-
                 </jw-pagination>
             </div>
         </div>
