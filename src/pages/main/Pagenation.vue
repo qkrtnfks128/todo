@@ -13,7 +13,7 @@
                 :index="index+1">
                 <ul class="board__list">
                     <li>{{item.index}}</li>
-                    <li>{{item.name}}</li>
+                    <li><a href="" :class="{'link' : true}">{{item.name}}</a></li>
                     <li>{{item.writter}}</li>
                     <li>{{item.date}}</li>
                 </ul>
@@ -33,7 +33,13 @@
 <script>
 //npm install jw-paginate
 //npm install jw-vue-pagination
-const exampleItems = [...Array(150).keys()].map(i => ({ id: (i+1), name: '원숭이 온돈이는 빨개 빨가믄 사과 사과는 마시써 맛있으면 바나나 바나나는 길어 길면 기차 기차는 빨라 빠르면 비행기 ' + (i+1) , writter:'곰돌이'+(i+1), date:'2021.07.07', index:(i+1)})).reverse();
+const exampleItems = [...Array(150).keys()].map(i => ({ 
+    id: (i+1), 
+    name: '원숭이 온돈이는 빨개 빨가믄 사과 사과는 마시써 맛있으면 바나나 바나나는 길어 길면 기차 기차는 빨라 빠르면 비행기 ' + (i+1) , 
+    writter:'곰돌이'+(i+1), 
+    date:'2021.07.07', 
+    index:(i+1)
+})).reverse();
 // const exampleItems =[
 //     {id:(i+1), name:'니나노오', writter:'망고', date:'2021.02.21'},
 //     {id:(i+1), name:'니나노오1', writter:'망고1', date:'2021.02.21'},
@@ -47,6 +53,8 @@ const exampleItems = [...Array(150).keys()].map(i => ({ id: (i+1), name: '원숭
 //     {id:(i+1), name:'니나노오9', writter:'망고9', date:'2021.02.21'},
 //     {id:(i+1), name:'니나노오0', writter:'망고0', date:'2021.02.21'},
 // ].reverse();
+
+
 const customLabels = {
     first: '<<',
     last: '>>',
@@ -84,7 +92,7 @@ export default {
         onChangePage(pageOfItems) {
             // update page of items
             this.pageOfItems = pageOfItems;
-        }
+        },
     },
     mounted() {
 
